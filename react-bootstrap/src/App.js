@@ -4,16 +4,15 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import AntDesign from './pages/AntDesign'
-import ReactBootstrap from './pages/ReactBootstrap'
+import index from './pages/index'
+import 'bootstrap/dist/css/bootstrap.css'
 
 function App () {
   return (
       <>
       <Router>
         <Switch>
-          <Route path="/react-bootstrap" component={ReactBootstrap}></Route>
-          <Route path="/ant-design" component={AntDesign}></Route>
+          <Route path="/" component={index} />
         </Switch>
       </Router>
       </>
