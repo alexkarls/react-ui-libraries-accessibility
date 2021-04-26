@@ -4,6 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
+import AntDesign from './pages/AntDesign'
 import ReactBootstrap from './pages/ReactBootstrap'
 
 function App () {
@@ -12,6 +13,7 @@ function App () {
       <Router>
         <Switch>
           <Route path="/react-bootstrap" component={ReactBootstrap}></Route>
+          <Route path="/ant-design" component={AntDesign}></Route>
         </Switch>
       </Router>
       </>
