@@ -65,8 +65,7 @@ const tableItems = [
 
 const inputs = [
   { labelText: 'This is input 1', controlId: 'inputControl1', disbaled: false },
-  { labelText: 'This is input 2', controlId: 'inputControl2', disabled: false },
-  { labelText: 'This is input 3', controlId: 'inputControl3', disabled: true }
+  { labelText: 'This is input 2', controlId: 'inputControl2', disabled: true }
 ]
 
 const checkboxes = [
@@ -80,12 +79,6 @@ const checkboxes = [
     name: 'check-2',
     id: 'checkbox-2',
     label: 'This is checkbox 2',
-    disabled: false
-  },
-  {
-    name: 'check-3',
-    id: 'checkbox-3',
-    label: 'This is checkbox 3',
     disabled: true
   }
 ]
@@ -102,16 +95,18 @@ const radios = [
     id: 'radio-2',
     label: 'This is radio 2',
     disabled: false
-  },
-  {
-    name: 'radio-3',
-    id: 'radio-3',
-    label: 'This is radio 3',
-    disabled: true
   }
 ]
 
-const selectOptions = [{ value: 1, disabled: false }, { value: 2, disabled: false }, { value: 3, disabled: true }]
+const selectOptions = [
+  { value: 1, disabled: false },
+  { value: 2, disabled: true }
+]
+
+const sliders = [
+  { id: 'slider-1', label: 'This is slider 1', disabled: false },
+  { id: 'slider-1', label: 'This is slider 1', disabled: true }
+]
 
 const index = () => {
   return (
@@ -245,11 +240,27 @@ const index = () => {
                 )
               })}
             </Form.Group>
+            {/* Slider */}
+            <Form.Group controlId='formBasicRangeCustom'>
+              {sliders.map((slider) => {
+                return (
+                  <div key={index}>
+                    <Form.Label>{slider.label}</Form.Label>
+                    <Form.Control
+                      type='range'
+                      disabled={slider.disabled}
+                    ></Form.Control>
+                  </div>
+                )
+              })}
+            </Form.Group>
             {/* Select */}
-            <Form.Group controlId="selectControl">
+            <Form.Group controlId='selectControl'>
               <Form.Label>Select</Form.Label>
-              <Form.Control as="select" custom>
-                {selectOptions.map((option, index) => <option key={index}>{option.value}</option>)}
+              <Form.Control as='select' custom>
+                {selectOptions.map((option, index) => (
+                  <option key={index}>{option.value}</option>
+                ))}
               </Form.Control>
             </Form.Group>
           </Form>
