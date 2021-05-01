@@ -19,21 +19,21 @@ In pretium auctor enim sit amet mollis.
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
 
-const accordions = [
+const accordionItems = [
   { header: 'This is accordion header 1', text: text },
   { header: 'This is accordion header 2', text: text + text },
   { header: 'This is accordion header 3', text: text + text + text }
 ]
 
-const tabs = [
-  { title: 'This is tab 1', eventKey: 'tab-1', text: text, disabled: false },
+const tabsItems = [
+  { header: 'This is tab 1', eventKey: 'tab-1', text: text, disabled: false },
   {
-    title: 'This is tab 2',
+    header: 'This is tab 2',
     eventKey: 'tab-2',
     text: text + text,
     disabled: false
   },
-  { title: 'This is tab 3', eventKey: 'tab-3', text: null, disabled: true }
+  { header: 'This is tab 3', eventKey: 'tab-3', text: null, disabled: true }
 ]
 
 const tableItems = [
@@ -115,7 +115,7 @@ const index = () => {
         {/* Accordion implementation: https://react-bootstrap.github.io/components/accordion/ */}
         <article className='component-article'>
           <Accordion>
-            {accordions.map((accordion, index) => {
+            {accordionItems.map((item, index) => {
               return (
                 <div key={index}>
                   <Card>
@@ -125,11 +125,11 @@ const index = () => {
                         variant='link'
                         eventKey={`${index}`}
                       >
-                        {accordion.header}
+                        {item.header}
                       </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey={`${index}`}>
-                      <Card.Body>{accordion.text}</Card.Body>
+                      <Card.Body>{item.text}</Card.Body>
                     </Accordion.Collapse>
                   </Card>
                 </div>
@@ -137,30 +137,30 @@ const index = () => {
             })}
           </Accordion>
         </article>
-        {/* Tab implementation: https://react-bootstrap.github.io/components/tabs/ */}
+        {/* Tab implementation: https://react-bootstrap.github.io/components/tabsItems/ */}
         {/* Note: Abstract class, unable to use map() */}
         <article className='component-article'>
-          <Tabs defaultActiveKey={tabs[0].eventKey} id='tab-test-uncontrolled'>
+          <Tabs defaultActiveKey={tabsItems[0].eventKey} id='tab-test-uncontrolled'>
             <Tab
-              eventKey={tabs[0].eventKey}
-              title={tabs[0].title}
-              disabled={tabs[0].disabled}
+              eventKey={tabsItems[0].eventKey}
+              title={tabsItems[0].header}
+              disabled={tabsItems[0].disabled}
             >
-              <p>{tabs[0].text}</p>
+              <p>{tabsItems[0].text}</p>
             </Tab>
             <Tab
-              eventKey={tabs[1].eventKey}
-              title={tabs[1].title}
-              disabled={tabs[1].disabled}
+              eventKey={tabsItems[1].eventKey}
+              title={tabsItems[1].header}
+              disabled={tabsItems[1].disabled}
             >
-              <p>{tabs[1].text}</p>
+              <p>{tabsItems[1].text}</p>
             </Tab>
             <Tab
-              eventKey={tabs[2].eventKey}
-              title={tabs[2].title}
-              disabled={tabs[2].disabled}
+              eventKey={tabsItems[2].eventKey}
+              title={tabsItems[2].header}
+              disabled={tabsItems[2].disabled}
             >
-              <p>{tabs[2].text}</p>
+              <p>{tabsItems[2].text}</p>
             </Tab>
           </Tabs>
         </article>
