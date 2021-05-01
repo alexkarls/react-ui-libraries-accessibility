@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  Accordion,
-  Card,
-  Button,
-  Tabs,
-  Tab,
-  Table,
-  Form
-} from 'react-bootstrap'
+import { Accordion, Card, Button, Tabs, Tab, Form } from 'react-bootstrap'
 
 // This text is used in other components as seen in the Accordions and Tabs below
 const text = `
@@ -36,49 +28,22 @@ const tabsItems = [
   { header: 'This is tab 3', eventKey: 'tab-3', text: null, disabled: true }
 ]
 
-const tableItems = [
-  {
-    header: 'This is table header 1',
-    data: [
-      'Header 1 data on row 1',
-      'Header 1 data on row 2',
-      'Header 1 data on row 3'
-    ]
-  },
-  {
-    header: 'This is table header 2',
-    data: [
-      'Header 2 data on row 1',
-      'Header 2 data on row 2',
-      'Header 2 data on row 3'
-    ]
-  },
-  {
-    header: 'This is table header 3',
-    data: [
-      'Header 3 data on row 1',
-      'Header 3 data on row 3',
-      'Header 3 data on row 3'
-    ]
-  }
-]
-
 const inputs = [
-  { labelText: 'This is input 1', controlId: 'inputControl1', disbaled: false },
-  { labelText: 'This is input 2', controlId: 'inputControl2', disabled: true }
+  { text: 'This is input 1', controlId: 'inputControl1', disbaled: false },
+  { text: 'This is input 2', controlId: 'inputControl2', disabled: true }
 ]
 
 const checkboxes = [
   {
     name: 'check-1',
     id: 'checkbox-1',
-    label: 'This is checkbox 1',
+    text: 'This is checkbox 1',
     disabled: false
   },
   {
     name: 'check-2',
     id: 'checkbox-2',
-    label: 'This is checkbox 2',
+    text: 'This is checkbox 2',
     disabled: true
   }
 ]
@@ -87,25 +52,32 @@ const radios = [
   {
     name: 'radio-1',
     id: 'radio-1',
-    label: 'This is radio 1',
+    text: 'This is radio 1',
     disabled: false
   },
   {
     name: 'radio-2',
     id: 'radio-2',
-    label: 'This is radio 2',
+    text: 'This is radio 2',
     disabled: false
+  },
+  {
+    name: 'radio-3',
+    id: 'radio-3',
+    text: 'This is radio 3',
+    disabled: true
   }
 ]
 
 const selectOptions = [
   { value: 1, disabled: false },
-  { value: 2, disabled: true }
+  { value: 2, disabled: false },
+  { value: 3, disabled: true }
 ]
 
 const sliders = [
   { id: 'slider-1', label: 'This is slider 1', disabled: false },
-  { id: 'slider-1', label: 'This is slider 1', disabled: true }
+  { id: 'slider-2', label: 'This is slider 2', disabled: true }
 ]
 
 const index = () => {
@@ -140,7 +112,10 @@ const index = () => {
         {/* Tab implementation: https://react-bootstrap.github.io/components/tabsItems/ */}
         {/* Note: Abstract class, unable to use map() */}
         <article className='component-article'>
-          <Tabs defaultActiveKey={tabsItems[0].eventKey} id='tab-test-uncontrolled'>
+          <Tabs
+            defaultActiveKey={tabsItems[0].eventKey}
+            id='tab-test-uncontrolled'
+          >
             <Tab
               eventKey={tabsItems[0].eventKey}
               title={tabsItems[0].header}
@@ -164,35 +139,6 @@ const index = () => {
             </Tab>
           </Tabs>
         </article>
-        {/* Table implementation: https://react-bootstrap.github.io/components/table/ */}
-        <article className='component-article'>
-          <Table>
-            <thead>
-              <tr>
-                <th>{tableItems[0].header}</th>
-                <th>{tableItems[1].header}</th>
-                <th>{tableItems[2].header}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{tableItems[0].data[0]}</td>
-                <td>{tableItems[1].data[0]}</td>
-                <td>{tableItems[2].data[0]}</td>
-              </tr>
-              <tr>
-                <td>{tableItems[0].data[1]}</td>
-                <td>{tableItems[1].data[1]}</td>
-                <td>{tableItems[2].data[1]}</td>
-              </tr>
-              <tr>
-                <td>{tableItems[0].data[2]}</td>
-                <td>{tableItems[1].data[2]}</td>
-                <td>{tableItems[2].data[2]}</td>
-              </tr>
-            </tbody>
-          </Table>
-        </article>
         {/* Form implementation: https://react-bootstrap.github.io/components/forms/ */}
         <article className='component-article'>
           <Form>
@@ -201,7 +147,7 @@ const index = () => {
               return (
                 <div key={index}>
                   <Form.Group controlId={input.controlId}>
-                    <Form.Label>{input.labelText}</Form.Label>
+                    <Form.Label>{input.text}</Form.Label>
                     <Form.Control
                       type='text'
                       disabled={input.disabled}
@@ -218,7 +164,7 @@ const index = () => {
                     <Form.Check
                       id={checkbox.id}
                       name={checkbox.name}
-                      label={checkbox.label}
+                      label={checkbox.text}
                       disabled={checkbox.disabled}
                     />
                   </div>
@@ -233,7 +179,7 @@ const index = () => {
                     <Form.Check
                       id={radio.id}
                       name={radio.name}
-                      label={radio.label}
+                      label={radio.text}
                       disabled={radio.disabled}
                     />
                   </div>
@@ -245,7 +191,7 @@ const index = () => {
               {sliders.map((slider) => {
                 return (
                   <div key={index}>
-                    <Form.Label>{slider.label}</Form.Label>
+                    <Form.Label>{slider.text}</Form.Label>
                     <Form.Control
                       type='range'
                       disabled={slider.disabled}
@@ -257,9 +203,15 @@ const index = () => {
             {/* Select */}
             <Form.Group controlId='selectControl'>
               <Form.Label>Select</Form.Label>
-              <Form.Control as='select' custom>
+              <Form.Control
+                as='select'
+                defaultValue={selectOptions[0].value}
+                custom
+              >
                 {selectOptions.map((option, index) => (
-                  <option key={index}>{option.value}</option>
+                  <option key={index} disabled={option.disabled}>
+                    {option.value}
+                  </option>
                 ))}
               </Form.Control>
             </Form.Group>
