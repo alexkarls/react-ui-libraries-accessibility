@@ -47,12 +47,14 @@ const inputs = [
 
 const checkboxes = [
   {
-    name: 'check-1',
     text: 'This is checkbox 1',
     disabled: false
   },
   {
-    name: 'check-2',
+    text: 'This is checkbox 2',
+    disabled: false
+  },
+  {
     text: 'This is checkbox 2',
     disabled: true
   }
@@ -60,17 +62,14 @@ const checkboxes = [
 
 const radios = [
   {
-    name: 'radio-1',
     text: 'This is radio 1',
     disabled: false
   },
   {
-    name: 'radio-2',
     text: 'This is radio 2',
     disabled: false
   },
   {
-    name: 'radio-3',
     text: 'This is radio 3',
     disabled: true
   }
@@ -78,7 +77,8 @@ const radios = [
 
 const selectOptions = [
   { value: 1, disabled: false },
-  { value: 2, disabled: true }
+  { value: 2, disabled: false },
+  { value: 3, disabled: true }
 ]
 
 const sliders = [
@@ -122,10 +122,10 @@ const index = () => {
             })}
           </Tabs>
         </article>
-        {/* Form: https://ant.design/components/form/ */}
+        {/* Form impelementation: https://ant.design/components/form/ */}
         <article className='component-article'>
           <Form>
-            {/* Inputs */}
+            {/* Input */}
             {inputs.map((input, index) => {
               return (
                 <Fragment key={index}>
@@ -139,13 +139,13 @@ const index = () => {
             {checkboxes.map((checkbox, index) => {
               return (
                 <Fragment key={index}>
-                  <Form.Item name={checkbox.name} label={checkbox.text}>
-                    <Checkbox value={index} disabled={checkbox.disabled} />
-                  </Form.Item>
+                  <Checkbox value={index} disabled={checkbox.disabled}>
+                    {checkbox.text}
+                  </Checkbox>
                 </Fragment>
               )
             })}
-            {/* Radios */}
+            {/* Radio */}
             {radios.map((radio, index) => {
               return (
                 <Radio.Group
@@ -153,7 +153,6 @@ const index = () => {
                   value={radioValue}
                   onChange={handleRadio}
                 >
-                  {/* Does not work with <Form.Item>, tried to use it for label */}
                   <Radio value={index} disabled={radio.disabled}>
                     {radio.text}
                   </Radio>
