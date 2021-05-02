@@ -192,7 +192,9 @@ const index = () => {
                   checked={checkedCheckboxes.indexOf(index) !== -1}
                   ariaLabelledBy={`checkbox-label-${index}`}
                 />
-                <label id={`checkbox-label-${index}`} htmlFor={checkbox.id}>{checkbox.text}</label>
+                <label id={`checkbox-label-${index}`} htmlFor={checkbox.id}>
+                  {checkbox.text}
+                </label>
               </div>
             ))}
             {/* Radio: https://www.primefaces.org/primereact/showcase/#/radiobutton */}
