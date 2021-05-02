@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import {
+  Modal,
+  Button,
   Collapse,
   Tabs,
   Form,
@@ -23,6 +25,12 @@ Donec eros lorem, pellentesque a magna quis, vestibulum eleifend ex.
 In pretium auctor enim sit amet mollis. 
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
+
+const modal = {
+  buttonText: 'Show modal',
+  header: 'This is the modal',
+  text: text + text + text
+}
 
 const accordionItems = [
   { header: 'This is accordion header 1', text: text },
@@ -87,7 +95,8 @@ const sliders = [
 ]
 
 const index = () => {
-  // State required to switch radios: https://ant.design/components/radio/
+  // State required for components
+  const [showModal, setShowModal] = useState(false)
   const [radioValue, setRadioValue] = useState(0)
 
   const handleRadio = (event) => {
@@ -98,6 +107,18 @@ const index = () => {
   return (
     <main>
       <section className='component-section'>
+        {/* Modal implementation: https://ant.design/components/modal/ */}
+        <article className='component-article'>
+          <Button onClick={() => setShowModal(true)}>{modal.buttonText}</Button>
+          <Modal
+            title={modal.header}
+            visible={showModal}
+            onOk={() => setShowModal(false)}
+            onCancel={() => setShowModal(false)}
+          >
+            <p>{modal.text}</p>
+          </Modal>
+        </article>
         {/* Accordion implementation: https://ant.design/components/collapse/ */}
         <article className='component-article'>
           <Collapse accordion>
