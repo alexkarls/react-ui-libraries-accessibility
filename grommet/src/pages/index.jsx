@@ -216,14 +216,13 @@ const index = () => {
                 />
               </FormField>
             ))}
-            {/* Based on:  https://storybook.grommet.io/?path=/story/input-select-inside-a-formfield--inside-form-field */}
+            {/* Select: https://v2.grommet.io/select & https://storybook.grommet.io/?path=/story/input-select-inside-a-formfield--inside-form-field */}
             <FormField name='select-1-name' label='Select'>
               {/* Note: Select does nost list an "id" attribute, hence its not included in FormField and Select */}
               {/* Note: "a11yTitle" attribute can solve issue: Form elements must have labels, however, it should not be needed inside a FormField that has a label? https://v2.grommet.io/select */}
               {/* Additional note: "a11yTitle" on FomField does not resolve issue https://v2.grommet.io/formfield */}
               <Select
                 name='select-1-name'
-                labelKey='select-1-label'
                 options={selectOptions}
                 defaultValue={selectOptions[0]}
                 disabled={[2]}
