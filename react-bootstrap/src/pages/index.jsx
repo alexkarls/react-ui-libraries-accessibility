@@ -77,8 +77,8 @@ const radios = [
 ]
 
 const sliders = [
-  { id: 'slider-1', label: 'This is slider 1', disabled: false },
-  { id: 'slider-2', label: 'This is slider 2', disabled: true }
+  { id: 'slider-1-id', label: 'This is slider 1', disabled: false },
+  { id: 'slider-2-id', label: 'This is slider 2', disabled: true }
 ]
 
 const selectOptions = [
@@ -153,17 +153,15 @@ const index = () => {
               ))}
             </Form.Group>
             {/* Slider */}
-            <Form.Group controlId='formBasicRangeCustom'>
-              {sliders.map((slider) => (
-                <div key={index}>
-                  <Form.Label>{slider.text}</Form.Label>
-                  <Form.Control
-                    type='range'
-                    disabled={slider.disabled}
-                  ></Form.Control>
-                </div>
-              ))}
-            </Form.Group>
+            {sliders.map((slider) => (
+              <Form.Group key={index} controlId={slider.id}>
+                <Form.Label>{slider.text}</Form.Label>
+                <Form.Control
+                  type='range'
+                  disabled={slider.disabled}
+                ></Form.Control>
+              </Form.Group>
+            ))}
             {/* Select */}
             <Form.Group controlId='selectControl'>
               <Form.Label>Select</Form.Label>
