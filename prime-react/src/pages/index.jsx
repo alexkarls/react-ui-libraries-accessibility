@@ -24,14 +24,13 @@ const accordionItems = [
 ]
 
 const tabsItems = [
-  { header: 'This is tab 1', eventKey: 'tab-1', text: text, disabled: false },
+  { header: 'This is tab 1', text: text, disabled: false },
   {
     header: 'This is tab 2',
-    eventKey: 'tab-2',
     text: text + text,
     disabled: false
   },
-  { header: 'This is tab 3', eventKey: 'tab-3', text: null, disabled: true }
+  { header: 'This is tab 3', text: null, disabled: true }
 ]
 
 const inputs = [
@@ -54,21 +53,18 @@ const checkboxes = [
     id: 'checkbox-1-id',
     name: 'checkbox-1-name',
     text: 'This is checkbox 1',
-    value: 0,
     disabled: false
   },
   {
     id: 'checkbox-2-id',
     name: 'checkbox-2-name',
     text: 'This is checkbox 2',
-    value: 1,
     disabled: false
   },
   {
     id: 'checkbox-3-id',
     name: 'checkbox-3-name',
     text: 'This is checkbox 3',
-    value: 2,
     disabled: true
   }
 ]
@@ -78,21 +74,18 @@ const radios = [
     id: 'radio-1-id',
     name: 'radio-1-name',
     text: 'This is radio 1',
-    value: 0,
     disabled: false
   },
   {
     id: 'radio-2-id',
     name: 'radio-2-name',
     text: 'This is radio 2',
-    value: 1,
     disabled: false
   },
   {
     id: 'radio-3-id',
     name: 'radio-3-name',
     text: 'This is radio 3',
-    value: 2,
     disabled: true
   }
 ]
