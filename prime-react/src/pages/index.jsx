@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Accordion, AccordionTab } from 'primereact/accordion'
-import { TabView, TabPanel } from 'primereact/tabview'
 import { InputText } from 'primereact/inputtext'
 import { Checkbox } from 'primereact/checkbox'
 import { RadioButton } from 'primereact/radiobutton'
@@ -17,20 +16,22 @@ In pretium auctor enim sit amet mollis.
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
 
+/*
+The following data below is to be implemented in the following components:
+- Accordion
+- Form
+  - Input
+  - Checkbox
+  - Radio
+  - Slider
+  - Select
+Note: Some component attributes can in some cases be added directly to a component depending on convenience.
+*/
+
 const accordionItems = [
   { header: 'This is accordion header 1', text: text },
   { header: 'This is accordion header 2', text: text + text },
   { header: 'This is accordion header 3', text: text + text + text }
-]
-
-const tabsItems = [
-  { header: 'This is tab 1', text: text, disabled: false },
-  {
-    header: 'This is tab 2',
-    text: text + text,
-    disabled: false
-  },
-  { header: 'This is tab 3', text: null, disabled: true }
 ]
 
 const inputs = [
@@ -142,21 +143,6 @@ const index = () => {
               </AccordionTab>
             ))}
           </Accordion>
-        </article>
-        {/* Tabs (TabView): https://primefaces.org/primereact/showcase/#/tabview */}
-        {/* Implementation based on demo: https://github.com/primefaces/primereact/blob/master/src/showcase/tabview/TabViewDemo.js */}
-        <article className='component-article'>
-          <TabView>
-            {tabsItems.map((item, index) => (
-              <TabPanel
-                key={index}
-                header={item.header}
-                disabled={item.disabled}
-              >
-                <p>{item.text}</p>
-              </TabPanel>
-            ))}
-          </TabView>
         </article>
         {/* Form */}
         <article className='component-article'>

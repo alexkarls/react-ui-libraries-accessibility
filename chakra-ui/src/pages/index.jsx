@@ -6,11 +6,6 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
   FormControl,
   FormLabel,
   Input,
@@ -52,16 +47,6 @@ const accordionItems = [
   { header: 'This is accordion header 1', text: text },
   { header: 'This is accordion header 2', text: text + text },
   { header: 'This is accordion header 3', text: text + text + text }
-]
-
-const tabsItems = [
-  { header: 'This is tab 1', text: text, disabled: false },
-  {
-    header: 'This is tab 2',
-    text: text + text,
-    disabled: false
-  },
-  { header: 'This is tab 3', text: null, disabled: true }
 ]
 
 const inputs = [
@@ -135,23 +120,6 @@ const index = () => {
               )
             })}
           </Accordion>
-        </article>
-        {/* Tabs implementation: https://chakra-ui.com/docs/disclosure/tabs */}
-        <article className='component-article'>
-          <Tabs>
-            <TabList>
-              {tabsItems.map((item, index) => (
-                <Tab key={index} isDisabled={item.disabled}>
-                  {item.header}
-                </Tab>
-              ))}
-            </TabList>
-            <TabPanels>
-              {tabsItems.map((item, index) => (
-                <TabPanel key={index}>{item.text}</TabPanel>
-              ))}
-            </TabPanels>
-          </Tabs>
         </article>
         {/* Form implementation: https://chakra-ui.com/docs/form/form-control */}
         <article className='component-article'>

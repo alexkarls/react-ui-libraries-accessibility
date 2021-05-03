@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import {
   Collapse,
-  Tabs,
   Form,
   Input,
   Radio,
@@ -11,7 +10,6 @@ import {
 } from 'antd'
 
 const { Panel } = Collapse
-const { TabPane } = Tabs
 const { Option } = Select
 
 // This text is used in other components as seen in "accordionItems"
@@ -28,16 +26,6 @@ const accordionItems = [
   { header: 'This is accordion header 1', text: text },
   { header: 'This is accordion header 2', text: text + text },
   { header: 'This is accordion header 3', text: text + text + text }
-]
-
-const tabsItems = [
-  { header: 'This is tab 1', text: text, disabled: false },
-  {
-    header: 'This is tab 2',
-    text: text + text,
-    disabled: false
-  },
-  { header: 'This is tab 3', text: null, disabled: true }
 ]
 
 const inputs = [
@@ -107,16 +95,6 @@ const index = () => {
               </Panel>
             ))}
           </Collapse>
-        </article>
-        {/* Tabs implementation: https://ant.design/components/tabs/ */}
-        <article className='component-article'>
-          <Tabs defaultActiveKey='0'>
-            {tabsItems.map((item, index) => (
-              <TabPane tab={item.header} key={index} disabled={item.disabled}>
-                {item.text}
-              </TabPane>
-            ))}
-          </Tabs>
         </article>
         {/* Form: https://ant.design/components/form/ */}
         <article className='component-article'>
