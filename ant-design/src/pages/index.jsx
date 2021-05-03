@@ -1,7 +1,5 @@
 import React, { Fragment, useState } from 'react'
 import {
-  Modal,
-  Button,
   Collapse,
   Tabs,
   Form,
@@ -26,12 +24,6 @@ In pretium auctor enim sit amet mollis.
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
 
-const modal = {
-  buttonText: 'Show modal',
-  header: 'This is the modal',
-  text: text + text + text
-}
-
 const accordionItems = [
   { header: 'This is accordion header 1', text: text },
   { header: 'This is accordion header 2', text: text + text },
@@ -49,8 +41,8 @@ const tabsItems = [
 ]
 
 const inputs = [
-  { name: 'input-1', text: 'This is input 1', disbaled: false },
-  { name: 'input-2', text: 'This is input 2', disabled: true }
+  { name: 'input-1-name', text: 'This is input 1', disbaled: false },
+  { name: 'input-2-name', text: 'This is input 2', disabled: true }
 ]
 
 const checkboxes = [
@@ -84,19 +76,18 @@ const radios = [
 ]
 
 const selectOptions = [
+  { value: 0, disabled: false },
   { value: 1, disabled: false },
-  { value: 2, disabled: false },
-  { value: 3, disabled: true }
+  { value: 2, disabled: true }
 ]
 
 const sliders = [
-  { name: 'slider-1', text: 'This is slider 1', disabled: false },
-  { name: 'slider-2', text: 'This is slider 1', disabled: true }
+  { name: 'slider-1-name', text: 'This is slider 1', disabled: false },
+  { name: 'slider-2-name', text: 'This is slider 1', disabled: true }
 ]
 
 const index = () => {
   // State required for components
-  const [showModal, setShowModal] = useState(false)
   const [radioValue, setRadioValue] = useState(0)
 
   const handleRadio = (event) => {
@@ -107,88 +98,71 @@ const index = () => {
   return (
     <main>
       <section className='component-section'>
-        {/* Modal implementation: https://ant.design/components/modal/ */}
-        <article className='component-article'>
-          <Button onClick={() => setShowModal(true)}>{modal.buttonText}</Button>
-          <Modal
-            title={modal.header}
-            visible={showModal}
-            onOk={() => setShowModal(false)}
-            onCancel={() => setShowModal(false)}
-          >
-            <p>{modal.text}</p>
-          </Modal>
-        </article>
         {/* Accordion implementation: https://ant.design/components/collapse/ */}
         <article className='component-article'>
           <Collapse accordion>
-            {accordionItems.map((item, index) => {
-              return (
-                <Panel header={item.header} key={index}>
-                  <p>{item.text}</p>
-                </Panel>
-              )
-            })}
+            {accordionItems.map((item, index) => (
+              <Panel header={item.header} key={index}>
+                <p>{item.text}</p>
+              </Panel>
+            ))}
           </Collapse>
         </article>
         {/* Tabs implementation: https://ant.design/components/tabs/ */}
         <article className='component-article'>
           <Tabs defaultActiveKey='0'>
-            {tabsItems.map((item, index) => {
-              return (
-                <TabPane tab={item.header} key={index} disabled={item.disabled}>
-                  {item.text}
-                </TabPane>
-              )
-            })}
+            {tabsItems.map((item, index) => (
+              <TabPane tab={item.header} key={index} disabled={item.disabled}>
+                {item.text}
+              </TabPane>
+            ))}
           </Tabs>
         </article>
-        {/* Form impelementation: https://ant.design/components/form/ */}
+        {/* Form: https://ant.design/components/form/ */}
         <article className='component-article'>
           <Form>
-            {/* Input */}
-            {inputs.map((input, index) => {
-              return (
-                <Fragment key={index}>
-                  <Form.Item name={input.name} label={input.text}>
-                    <Input disabled={input.disabled} />
-                  </Form.Item>
-                </Fragment>
-              )
-            })}
-            {/* Checkbox */}
-            {checkboxes.map((checkbox, index) => {
-              return (
-                <Fragment key={index}>
-                  <Checkbox value={index} disabled={checkbox.disabled}>
-                    {checkbox.text}
-                  </Checkbox>
-                </Fragment>
-              )
-            })}
-            {/* Radio */}
-            {radios.map((radio, index) => {
-              return (
-                <Radio.Group
-                  key={index}
-                  value={radioValue}
-                  onChange={handleRadio}
-                >
-                  <Radio value={index} disabled={radio.disabled}>
-                    {radio.text}
-                  </Radio>
-                </Radio.Group>
-              )
-            })}
-            {/* Sliders */}
-            {sliders.map((slider, index) => {
-              return (
-                <Form.Item key={index} name={slider.name} label={slider.text}>
-                  <Slider disabled={slider.disabled}></Slider>
+            {/* Input: https://ant.design/components/input/ */}
+            {inputs.map((input, index) => (
+              <Fragment key={index}>
+                <Form.Item name={input.name} label={input.text}>
+                  <Input disabled={input.disabled} />
                 </Form.Item>
-              )
-            })}
-            {/* Select */}
+              </Fragment>
+            ))}
+            {/* Checkbox: https://ant.design/components/checkbox/ */}
+            {/* Also tested without <Checkbox.Group>, does not seem to be a difference in behavior */}
+            {/* Added the attribute "name" (not present in examples, but included in API) */}
+            <Checkbox.Group name='checkboxes-1'>
+              {checkboxes.map((checkbox, index) => (
+                <Checkbox
+                  key={index}
+                  value={index}
+                  disabled={checkbox.disabled}
+                >
+                  {checkbox.text}
+                </Checkbox>
+              ))}
+            </Checkbox.Group>
+            {/* Radio: https://rsuitejs.com/components/radio/ */}
+            {/* Added the attribute "name" (not present in examples, but included in API) */}
+            <Radio.Group
+              name='radios-1'
+              value={radioValue}
+              onChange={handleRadio}
+            >
+              {radios.map((radio, index) => (
+                <Radio key={index} value={index} disabled={radio.disabled}>
+                  {radio.text}
+                </Radio>
+              ))}
+            </Radio.Group>
+            {/* Slider: https://ant.design/components/slider/ */}
+            {sliders.map((slider, index) => (
+              <Form.Item key={index} name={slider.name} label={slider.text}>
+                <Slider disabled={slider.disabled}></Slider>
+              </Form.Item>
+            ))}
+            {/* Select: https://ant.design/components/select/ */}
             <Form.Item name='select-1' label='Select'>
               <Select defaultValue={selectOptions[0].value}>
                 {selectOptions.map((option, index) => (
