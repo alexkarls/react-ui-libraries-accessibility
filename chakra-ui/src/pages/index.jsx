@@ -100,9 +100,9 @@ const index = () => {
   const [radioValue, setRadioValue] = useState(0)
   return (
     <main>
-      <section className='component-section'>
+      <section>
         {/* Accordion implementation: https://chakra-ui.com/docs/disclosure/accordion */}
-        <article className='component-article'>
+        <article>
           <Accordion>
             {accordionItems.map((item, index) => {
               return (
@@ -122,7 +122,7 @@ const index = () => {
           </Accordion>
         </article>
         {/* Form implementation: https://chakra-ui.com/docs/form/form-control */}
-        <article className='component-article'>
+        <article>
           <form>
             {/* Input: https://chakra-ui.com/docs/form/input and Form Control for label: https://chakra-ui.com/docs/form/form-control */}
             {inputs.map((input, index) => {

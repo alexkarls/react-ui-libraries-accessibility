@@ -118,9 +118,9 @@ const selectOptions = ['0', '1', '2']
 const index = () => {
   return (
     <main>
-      <section className='component-section'>
+      <section>
         {/* Accordion implementation: https://v2.grommet.io/accordion */}
-        <article className='component-article'>
+        <article>
           <Accordion>
             {accordionItems.map((item, index) => (
               <AccordionPanel key={index} label={item.header}>
@@ -132,7 +132,7 @@ const index = () => {
           </Accordion>
         </article>
         {/* Form implementation: https://v2.grommet.io/form */}
-        <article className='component-article'>
+        <article>
           <Form>
             {inputs.map((input, index) => (
               <FormField

@@ -85,9 +85,9 @@ const index = () => {
 
   return (
     <main>
-      <section className='component-section'>
+      <section>
         {/* Accordion implementation: https://ant.design/components/collapse/ */}
-        <article className='component-article'>
+        <article>
           <Collapse accordion>
             {accordionItems.map((item, index) => (
               <Panel header={item.header} key={index}>
@@ -97,7 +97,7 @@ const index = () => {
           </Collapse>
         </article>
         {/* Form: https://ant.design/components/form/ */}
-        <article className='component-article'>
+        <article>
           <Form>
             {/* Input: https://ant.design/components/input/ */}
             {inputs.map((input, index) => (

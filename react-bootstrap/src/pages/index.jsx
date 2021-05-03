@@ -90,9 +90,9 @@ const selectOptions = [
 const index = () => {
   return (
     <main>
-      <section className='component-section'>
+      <section>
         {/* Accordion: https://react-bootstrap.github.io/components/accordion/ */}
-        <article className='component-article'>
+        <article>
           <Accordion>
             {accordionItems.map((item, index) => (
               <div key={index}>
@@ -115,7 +115,7 @@ const index = () => {
           </Accordion>
         </article>
         {/* Form: https://react-bootstrap.github.io/components/forms/ */}
-        <article className='component-article'>
+        <article>
           <Form>
             {/* Input */}
             {inputs.map((input, index) => (

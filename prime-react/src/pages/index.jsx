@@ -132,10 +132,10 @@ const index = () => {
 
   return (
     <main>
-      <section className='component-section'>
+      <section>
         {/* Accordion: https://www.primefaces.org/primereact/showcase/#/accordion */}
         {/* Implementation based on demo: https://www.primefaces.org/primereact/showcase/#/accordion */}
-        <article className='component-article'>
+        <article>
           <Accordion>
             {accordionItems.map((item, index) => (
               <AccordionTab key={index} header={item.header}>
@@ -145,7 +145,7 @@ const index = () => {
           </Accordion>
         </article>
         {/* Form */}
-        <article className='component-article'>
+        <article>
           {/* Has no Form component */}
           <form>
             {/* Input: https://www.primefaces.org/primereact/showcase/#/inputtext */}

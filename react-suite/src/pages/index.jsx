@@ -104,9 +104,9 @@ const selectOptions = [
 const index = () => {
   return (
     <main>
-      <section className='component-section'>
+      <section>
         {/* Accordion: https://rsuitejs.com/components/panel/ */}
-        <article className='component-article'>
+        <article>
           <PanelGroup accordion defaultActiveKey={0} bordered>
             {accordionItems.map((item, index) => (
               <Panel key={index} header={item.header} eventKey={index}>
@@ -115,7 +115,7 @@ const index = () => {
             ))}
           </PanelGroup>
         </article>
-        <article className='component-article'>
+        <article>
           {/* Form: https://rsuitejs.com/components/form/ */}
           {/* Reading the documentation, <FormControl> seems like the best option to use for input inside a form. Also, the FormControl has more properties, such as name, that are relevant to accessibility */}
           <Form>
