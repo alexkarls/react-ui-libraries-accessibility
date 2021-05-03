@@ -77,8 +77,8 @@ const radios = [
 ]
 
 const sliders = [
-  { id: 'slider-1-id', label: 'This is slider 1', disabled: false },
-  { id: 'slider-2-id', label: 'This is slider 2', disabled: true }
+  { id: 'slider-1-id', text: 'This is slider 1', disabled: false },
+  { id: 'slider-2-id', text: 'This is slider 2', disabled: true }
 ]
 
 const selectOptions = [
