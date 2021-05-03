@@ -4,6 +4,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
+import 'rsuite/lib/styles/index.less' // or 'rsuite/dist/styles/rsuite-default.css'
+
 import index from './pages/index'
 
 function App () {
