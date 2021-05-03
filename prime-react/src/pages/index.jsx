@@ -7,7 +7,7 @@ import { RadioButton } from 'primereact/radiobutton'
 import { Slider } from 'primereact/slider'
 import { Dropdown } from 'primereact/dropdown'
 
-// This text is used in other components as seen in the Accordions and Tabs below
+// This text is used in other components as seen in "accordionItems"
 const text = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Etiam elit orci, placerat non libero ac, dignissim consectetur tortor. 

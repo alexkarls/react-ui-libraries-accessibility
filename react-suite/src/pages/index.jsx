@@ -15,7 +15,7 @@ import {
   SelectPicker
 } from 'rsuite'
 
-// This text is used in other components as seen in the Accordions and Tabs below
+// This text is used in other components as seen in "accordionItems"
 const text = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Etiam elit orci, placerat non libero ac, dignissim consectetur tortor. 
@@ -24,6 +24,18 @@ Donec eros lorem, pellentesque a magna quis, vestibulum eleifend ex.
 In pretium auctor enim sit amet mollis. 
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
+
+/*
+The following data below is to be implemented in the following components:
+- Accordion
+- Form
+  - Input
+  - Checkbox
+  - Radio
+  - Slider
+  - Select
+Note: Some component attributes can in some cases be added directly to a component depending on convenience.
+*/
 
 const accordionItems = [
   { header: 'This is accordion header 1', text: text },
