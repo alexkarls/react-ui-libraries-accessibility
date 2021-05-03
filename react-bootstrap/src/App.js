@@ -4,8 +4,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import index from './pages/index'
 import 'bootstrap/dist/css/bootstrap.css'
+import index from './pages/index'
 
 function App () {
   return (

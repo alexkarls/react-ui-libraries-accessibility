@@ -1,7 +1,7 @@
 import React from 'react'
 import { Accordion, Card, Button, Tabs, Tab, Form } from 'react-bootstrap'
 
-// This text is used in other components as seen in the Accordions and Tabs below
+// This text is used in other components as seen in "accordionItems"
 const text = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Etiam elit orci, placerat non libero ac, dignissim consectetur tortor. 
@@ -10,6 +10,18 @@ Donec eros lorem, pellentesque a magna quis, vestibulum eleifend ex.
 In pretium auctor enim sit amet mollis. 
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
+
+/*
+The following data below is to be implemented in the following components:
+- Accordion
+- Form
+  - Input
+  - Checkbox
+  - Radio
+  - Slider
+  - Select
+Note: Some component attributes can in some cases be added directly to a component depending on convenience.
+*/
 
 const accordionItems = [
   { header: 'This is accordion header 1', text: text },
@@ -169,6 +181,7 @@ const index = () => {
               ))}
             </Form.Group>
             {/* Radio */}
+            {/* Works as React Boostrap's form documentation, multiple radio's can be checked */}
             <Form.Group controlId='radioControl'>
               {radios.map((radio, index) => (
                 <Form.Check
