@@ -36,6 +36,18 @@ In pretium auctor enim sit amet mollis.
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
 
+/*
+The following data below is to be implemented in the following components:
+- Accordion
+- Form
+  - Input
+  - Checkbox
+  - Radio
+  - Slider
+  - Select
+Note: Some component attributes can in some cases be added directly to a component depending on convenience.
+*/
+
 const accordionItems = [
   { header: 'This is accordion header 1', text: text },
   { header: 'This is accordion header 2', text: text + text },
@@ -53,8 +65,8 @@ const tabsItems = [
 ]
 
 const inputs = [
-  { name: 'input-1', text: 'This is input 1', disbaled: false },
-  { name: 'input-2', text: 'This is input 2', disabled: true }
+  { name: 'input-1-name', text: 'This is input 1', disbaled: false },
+  { name: 'input-2-name', text: 'This is input 2', disabled: true }
 ]
 
 const checkboxes = [
@@ -87,15 +99,15 @@ const radios = [
   }
 ]
 
-const selectOptions = [
-  { value: 1, disabled: false },
-  { value: 2, disabled: false },
-  { value: 3, disabled: true }
+const sliders = [
+  { name: 'slider-1-name', text: 'This is slider 1', disabled: false },
+  { name: 'slider-2-name', text: 'This is slider 1', disabled: true }
 ]
 
-const sliders = [
-  { name: 'slider-1', text: 'This is slider 1', disabled: false },
-  { name: 'slider-2', text: 'This is slider 1', disabled: true }
+const selectOptions = [
+  { value: 0, disabled: false },
+  { value: 1, disabled: false },
+  { value: 2, disabled: true }
 ]
 
 const index = () => {
@@ -154,7 +166,7 @@ const index = () => {
               )
             })}
             {/* Checkbox (uncontrolled, no value): https://chakra-ui.com/docs/form/checkbox */}
-            {/* Stack seems to be standard to use for stacking/spacing */}
+            {/* Stack is included in docs, seem to be standard to use for stacking/spacing */}
             <CheckboxGroup>
               <Stack direction='row'>
                 {checkboxes.map((checkbox, index) => (
@@ -164,8 +176,8 @@ const index = () => {
                 ))}
               </Stack>
             </CheckboxGroup>
-            {/* Radio: https://chakra-ui.com/docs/form/form-control */}
-            {/* Stack seems to be standard to use for stacking/spacing */}
+            {/* Radio: https://chakra-ui.com/docs/form/radio */}
+            {/* Stack is included in docs, seem to be standard to use for stacking/spacing */}
             <RadioGroup
               value={Number(radioValue)}
               onChange={(radioValue) => setRadioValue(radioValue)}
@@ -183,8 +195,8 @@ const index = () => {
               </Stack>
             </RadioGroup>
             {/* Slider: https://chakra-ui.com/docs/form/slider */}
-            {/* Form Control for label: https://chakra-ui.com/docs/form/form-control (no other method to include text/label in the component documentation) */}
-            {/* Docs recommended aria-label */}
+            {/* Form Control docs for label: https://chakra-ui.com/docs/form/form-control (no other method to include text/label in the component documentation) */}
+            {/* Note: Docs recommended aria-label */}
             {sliders.map((slider, index) => (
               <FormControl key={index} id={slider.name}>
                 <FormLabel>{slider.text}</FormLabel>
@@ -197,7 +209,7 @@ const index = () => {
               </FormControl>
             ))}
             {/* Select: */}
-            {/* Form Control for label: https://chakra-ui.com/docs/form/form-control (no other method to include text/label in the component documentation) */}
+            {/* Form Control docs for label: https://chakra-ui.com/docs/form/form-control (no other method to include text/label in the component documentation) */}
             <FormControl id='select-1'>
               <FormLabel>Select</FormLabel>
               <Select defaultValue={selectOptions[0].value}>
