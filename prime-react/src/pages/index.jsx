@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { Button } from 'primereact/button'
-import { Dialog } from 'primereact/dialog'
 import { Accordion, AccordionTab } from 'primereact/accordion'
 import { TabView, TabPanel } from 'primereact/tabview'
 import { InputText } from 'primereact/inputtext'
@@ -18,12 +16,6 @@ Donec eros lorem, pellentesque a magna quis, vestibulum eleifend ex.
 In pretium auctor enim sit amet mollis. 
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
-
-const modal = {
-  buttonText: 'Show modal',
-  header: 'This is the modal',
-  text: text + text + text
-}
 
 const accordionItems = [
   { header: 'This is accordion header 1', text: text },
@@ -127,7 +119,6 @@ const selectOptions = [
 
 const index = () => {
   // State required for components
-  const [showModal, setShowModal] = useState(false)
   const [selectedOption, setSelectedOption] = useState('0')
   const [checkedCheckboxes, setCheckedCheckboxes] = useState([])
   const [checkedRadio, setCheckedRadio] = useState(null)
@@ -148,23 +139,6 @@ const index = () => {
   return (
     <main>
       <section className='component-section'>
-      {/* Modal (Dialog): https://www.primefaces.org/primereact/showcase/#/dialog */}
-      {/* Modal based on demo: https://github.com/primefaces/primereact/blob/master/src/showcase/dialog/DialogDemo.js */}
-      <article className='component-article'>
-        <Button
-          label={modal.buttonText}
-          icon='pi pi-external-link'
-          onClick={() => setShowModal(true)}
-        />
-
-        <Dialog
-          header={modal.header}
-          visible={showModal}
-          onHide={() => setShowModal(false)}
-        >
-          <p>{modal.text}</p>
-        </Dialog>
-        </article>
         {/* Accordion: https://www.primefaces.org/primereact/showcase/#/accordion */}
         {/* Implementation based on demo: https://www.primefaces.org/primereact/showcase/#/accordion */}
         <article className='component-article'>
