@@ -82,10 +82,11 @@ const sliders = [
 ]
 
 /* Based on: https://github.com/rsuite/rsuite/blob/master/docs/public/data/users-role.json */
+// Options can be disabled in <SelectPicker>
 const selectOptions = [
-  { label: '0', value: '0', disabled: false },
-  { label: '1', value: '1', disabled: false },
-  { label: '2', value: '2', disabled: true }
+  { label: '0', value: '0' },
+  { label: '1', value: '1' },
+  { label: '2', value: '2' }
 ]
 
 const index = () => {
@@ -155,7 +156,7 @@ const index = () => {
             ))}
             {/* Select: https://rsuitejs.com/components/select-picker/ */}
             {/* Also based on demo: https://github.com/rsuite/rsuite/blob/master/docs/pages/components/form/en-US/read-only.md */}
-            <FormGroup controlId='select-id'>
+            <FormGroup controlId='select-1-id'>
               <ControlLabel>Select</ControlLabel>
               <FormControl
                 name='select'
