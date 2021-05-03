@@ -1,4 +1,3 @@
-/* eslint-disable react/no-children-prop */
 import React from 'react'
 import {
   Accordion,
@@ -25,6 +24,18 @@ Donec eros lorem, pellentesque a magna quis, vestibulum eleifend ex.
 In pretium auctor enim sit amet mollis. 
 Nulla risus eros, facilisis vel nulla quis, semper.
 `
+
+/*
+The following data below is to be implemented in the following components:
+- Accordion
+- Form
+  - Input
+  - Checkbox
+  - Radio
+  - Slider
+  - Select
+Note: Some component attributes can in some cases be added directly to a component depending on convenience.
+*/
 
 const accordionItems = [
   { header: 'This is accordion header 1', text: text },
@@ -80,19 +91,19 @@ const checkboxes = [
 
 const radios = [
   {
-    name: 'radio-1',
+    name: 'radio-1-name',
     text: 'This is radio 1',
     value: 0,
     disabled: false
   },
   {
-    name: 'radio-2',
+    name: 'radio-2-name',
     text: 'This is radio 2',
     value: 1,
     disabled: false
   },
   {
-    name: 'radio-3',
+    name: 'radio-3-name',
     text: 'This is radio 3',
     value: 2,
     disabled: true
@@ -114,7 +125,7 @@ const sliders = [
   }
 ]
 
-const selectOptions = [1, 2, 3]
+const selectOptions = ['0', '1', '2']
 
 const index = () => {
   return (
@@ -219,8 +230,8 @@ const index = () => {
             {/* Select: https://v2.grommet.io/select & https://storybook.grommet.io/?path=/story/input-select-inside-a-formfield--inside-form-field */}
             <FormField name='select-1-name' label='Select'>
               {/* Note: Select does nost list an "id" attribute, hence its not included in FormField and Select */}
-              {/* Note: "a11yTitle" attribute can solve issue: Form elements must have labels, however, it should not be needed inside a FormField that has a label? https://v2.grommet.io/select */}
-              {/* Additional note: "a11yTitle" on FomField does not resolve issue https://v2.grommet.io/formfield */}
+              {/* Note: Attribute "a11yTitle" on Select can solve issue: Form elements must have labels, however, it should not be needed inside a FormField that has a label? https://v2.grommet.io/select */}
+              {/* Additional note: Attribute "a11yTitle" on FormField does not resolve issue https://v2.grommet.io/formfield */}
               <Select
                 name='select-1-name'
                 options={selectOptions}
