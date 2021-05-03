@@ -1,5 +1,5 @@
 import React from 'react'
-import { Accordion, Card, Button, Tabs, Tab, Form } from 'react-bootstrap'
+import { Accordion, Card, Button, Form } from 'react-bootstrap'
 
 // This text is used in other components as seen in "accordionItems"
 const text = `
@@ -27,17 +27,6 @@ const accordionItems = [
   { header: 'This is accordion header 1', text: text },
   { header: 'This is accordion header 2', text: text + text },
   { header: 'This is accordion header 3', text: text + text + text }
-]
-
-const tabsItems = [
-  { header: 'This is tab 1', eventKey: 'tab-1', text: text, disabled: false },
-  {
-    header: 'This is tab 2',
-    eventKey: 'tab-2',
-    text: text + text,
-    disabled: false
-  },
-  { header: 'This is tab 3', eventKey: 'tab-3', text: null, disabled: true }
 ]
 
 const inputs = [
@@ -124,36 +113,6 @@ const index = () => {
               </div>
             ))}
           </Accordion>
-        </article>
-        {/* Tab: https://react-bootstrap.github.io/components/tabsItems/ */}
-        {/* Note: Abstract class, unable to use map() */}
-        <article className='component-article'>
-          <Tabs
-            defaultActiveKey={tabsItems[0].eventKey}
-            id='tab-test-uncontrolled'
-          >
-            <Tab
-              eventKey={tabsItems[0].eventKey}
-              title={tabsItems[0].header}
-              disabled={tabsItems[0].disabled}
-            >
-              <p>{tabsItems[0].text}</p>
-            </Tab>
-            <Tab
-              eventKey={tabsItems[1].eventKey}
-              title={tabsItems[1].header}
-              disabled={tabsItems[1].disabled}
-            >
-              <p>{tabsItems[1].text}</p>
-            </Tab>
-            <Tab
-              eventKey={tabsItems[2].eventKey}
-              title={tabsItems[2].header}
-              disabled={tabsItems[2].disabled}
-            >
-              <p>{tabsItems[2].text}</p>
-            </Tab>
-          </Tabs>
         </article>
         {/* Form: https://react-bootstrap.github.io/components/forms/ */}
         <article className='component-article'>

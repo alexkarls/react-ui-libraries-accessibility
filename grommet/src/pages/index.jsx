@@ -4,8 +4,6 @@ import {
   AccordionPanel,
   Box,
   Text,
-  Tabs,
-  Tab,
   Form,
   FormField,
   TextInput,
@@ -41,16 +39,6 @@ const accordionItems = [
   { header: 'This is accordion header 1', text: text },
   { header: 'This is accordion header 2', text: text + text },
   { header: 'This is accordion header 3', text: text + text + text }
-]
-
-const tabsItems = [
-  { header: 'This is tab 1', text: text, disabled: false },
-  {
-    header: 'This is tab 2',
-    text: text + text,
-    disabled: false
-  },
-  { header: 'This is tab 3', text: null, disabled: true }
 ]
 
 const inputs = [
@@ -142,18 +130,6 @@ const index = () => {
               </AccordionPanel>
             ))}
           </Accordion>
-        </article>
-        <article className='component-article'>
-          {/* Tabs implementation: https://v2.grommet.io/tabs */}
-          <Tabs>
-            {tabsItems.map((item, index) => (
-              <Tab key={index} label={item.header} disabled={item.disabled}>
-                <Box>
-                  <Text>{item.text}</Text>
-                </Box>
-              </Tab>
-            ))}
-          </Tabs>
         </article>
         {/* Form implementation: https://v2.grommet.io/form */}
         <article className='component-article'>
