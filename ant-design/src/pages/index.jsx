@@ -144,7 +144,7 @@ const index = () => {
             <Form.Item name='select-1' label='Select'>
               <Select defaultValue={selectOptions[0].value}>
                 {selectOptions.map((option, index) => (
-                  <Option key={index} value={option.value}>
+                  <Option key={index} value={option.value} disabled={option.disabled}>
                     {option.value}
                   </Option>
                 ))}
