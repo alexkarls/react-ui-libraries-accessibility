@@ -50,7 +50,7 @@ const accordionItems = [
 ]
 
 const inputs = [
-  { name: 'input-1-name', text: 'This is input 1', disbaled: false },
+  { name: 'input-1-name', text: 'This is input 1', disabled: false },
   { name: 'input-2-name', text: 'This is input 2', disabled: true }
 ]
 
@@ -103,7 +103,7 @@ const index = () => {
       <section>
         {/* Accordion implementation: https://chakra-ui.com/docs/disclosure/accordion */}
         <article>
-          <Accordion>
+          <Accordion allowToggle>
             {accordionItems.map((item, index) => {
               return (
                 <AccordionItem key={index}>
@@ -127,7 +127,7 @@ const index = () => {
             {/* Input: https://chakra-ui.com/docs/form/input and Form Control for label: https://chakra-ui.com/docs/form/form-control */}
             {inputs.map((input, index) => {
               return (
-                <FormControl key={index} id={input.name} isDisabled={input}>
+                <FormControl key={index} id={input.name} isDisabled={input.disabled}>
                   <FormLabel>{input.text}</FormLabel>
                   <Input />
                 </FormControl>
