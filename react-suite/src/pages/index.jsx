@@ -121,13 +121,13 @@ const index = () => {
           <Form>
             {/* Input: https://rsuitejs.com/components/input */}
             {/* Also relevant (FormControl): https://rsuitejs.com/components/form/ */}
-            {inputs.map((item, index) => (
+            {inputs.map((input, index) => (
               <FormGroup key={index}>
-                <ControlLabel>{item.text}</ControlLabel>
+                <ControlLabel>{input.text}</ControlLabel>
                 <FormControl
-                  name={item.name}
+                  name={input.name}
                   accepter={Input}
-                  disabled={item.disabled}
+                  disabled={input.disabled}
                 ></FormControl>
               </FormGroup>
             ))}
@@ -167,6 +167,7 @@ const index = () => {
               </FormGroup>
             ))}
             {/* Select: https://rsuitejs.com/components/select-picker/ */}
+            {/* Note: No other properties such as id and htmlFor used in examples, could solve problems? */}
             {/* Also based on demo: https://github.com/rsuite/rsuite/blob/master/docs/pages/components/form/en-US/read-only.md */}
             <FormGroup controlId='select-1-id'>
               <ControlLabel>Select</ControlLabel>

@@ -135,12 +135,14 @@ const index = () => {
               ))}
             </Radio.Group>
             {/* Slider: https://ant.design/components/slider/ */}
+            {/* Used with Form.Item in docs: https://ant.design/components/form/ */}
             {sliders.map((slider, index) => (
               <Form.Item key={index} name={slider.name} label={slider.text}>
                 <Slider disabled={slider.disabled}></Slider>
               </Form.Item>
             ))}
             {/* Select: https://ant.design/components/select/ */}
+            {/* Does not seem to have a name attribute? Not used in examples */}
             <Form.Item name='select-1' label='Select'>
               <Select defaultValue={selectOptions[0].value}>
                 {selectOptions.map((option, index) => (

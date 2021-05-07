@@ -196,6 +196,7 @@ const index = () => {
           {/* Slider: https://www.primefaces.org/primereact/showcase/#/slider */}
           {/* Implementation based on demo: https://github.com/primefaces/primereact/blob/master/src/showcase/slider/SliderDemo.js */}
           {/* Important: Made a standard HTML label element since its missing from PrimeReact documentation and Slider examples */}
+          {/* Note: Name attribute not listed under properties for Slider */}
           {/* Note: "ariaLabelledBy" exists, but does not seem to solve problem detected with Axe? https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute */}
           <label htmlFor={sliders[0].id}>{sliders[0].text}</label>
           <Slider

@@ -176,7 +176,7 @@ const index = () => {
                 </Slider>
               </FormControl>
             ))}
-            {/* Select: */}
+            {/* Select: https://chakra-ui.com/docs/form/select (no other attributes such as id/name used in examples for Select) */}
             {/* Form Control docs for label: https://chakra-ui.com/docs/form/form-control (no other method to include text/label in the component documentation) */}
             <FormControl id='select-1'>
               <FormLabel>Select</FormLabel>
